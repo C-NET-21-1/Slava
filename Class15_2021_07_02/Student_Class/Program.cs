@@ -4,8 +4,10 @@ namespace Student_Class
 {
     class Program
     {
-        public static Student ChooseEnter(ConsoleKey key, Student person)
+        public static Student ChooseEnter(ConsoleKey key)
         {
+            Student person = null;
+
             switch (key)
             {
                 case ConsoleKey.D1:
@@ -42,16 +44,16 @@ namespace Student_Class
                     switch (alt)
                     {
                         case Alter.name:
-                            person.SetName(UI.GetName("New Name: "));
+                            person._name = UI.GetName("New Name: ");
                             break;
                         case Alter.lastname:
-                            person.SetLastName(UI.GetLastName("New Last Name: "));
+                            person._lastName = UI.GetLastName("New Last Name: ");
                             break;
                         case Alter.id:
-                            person.SetStudNumber(UI.GetStudNumber("New Id: "));
+                            person._studNum = UI.GetStudNumber("New Id: ");
                             break;
                         case Alter.enterdate:
-                            person.SetEnterDate(UI.GetEnterDate("Enter date: "));
+                            person._enterDate = UI.GetEnterDate("Enter date: ");
                             break;
                         case Alter.year:
                             UI.PrintYear(person);
@@ -76,9 +78,7 @@ namespace Student_Class
 
         static void Main()
         {
-            Student person = new Student();
-
-            person = ChooseEnter(UI.ChooseMenu(), person);
+            Student person = ChooseEnter(UI.ChooseMenu());
 
             UI.PrintStudent(person);
 

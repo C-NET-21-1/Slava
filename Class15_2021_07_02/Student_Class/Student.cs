@@ -4,24 +4,14 @@ namespace Student_Class
 {
     class Student
     {
-        private string _name;
-        private string _lastName;
-        private uint _studNum;
-        private DateTime _enterDate;
-
-        public void SetName(string input)
-        {
-            _name = input;
-        }
+        public string _name;
+        public string _lastName;
+        public uint _studNum;
+        public DateTime _enterDate;
 
         public string GetName()
         {
             return _name;
-        }
-
-        public void SetLastName(string input)
-        {
-            _lastName = input;
         }
 
         public string GetLastName()
@@ -29,19 +19,9 @@ namespace Student_Class
             return _lastName;
         }
 
-        public void SetStudNumber(uint input)
-        {
-            _studNum = input;
-        }
-
         public uint GetStudNumber()
         {
             return _studNum;
-        }
-
-        public void SetEnterDate(DateTime input)
-        {
-            _enterDate = input;
         }
 
         public DateTime GetEnterDate()
@@ -56,11 +36,6 @@ namespace Student_Class
             _lastName = lastName;
             _studNum = studNum;
             _enterDate = enterDate;
-        }
-
-        public Student()
-        {
-
         }
     }
 }

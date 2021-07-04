@@ -24,26 +24,7 @@ namespace Student_Class
         public static string GetName(string text = "Enter student's name: ")
         {
             Console.Write(text);
-
-            string name = ValidationName(Console.ReadLine());
-
-            return name;
-        }
-
-        public static string ValidationName(string name)
-        {
-            for (int i = 0; i < name.Length; i++)
-            {
-                if (char.IsLetter(name[i]))
-                {
-                    continue;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Name!");
-                    break;
-                }
-            }
+            string name = Console.ReadLine();
 
             return name;
         }
@@ -51,26 +32,7 @@ namespace Student_Class
         public static string GetLastName(string text = "Last Name: ")
         {
             Console.Write(text);
-
-            string lastName = ValidationLastName(Console.ReadLine());
-
-            return lastName;
-        }
-
-        public static string ValidationLastName(string lastName)
-        {
-            for (int i = 0; i < lastName.Length; i++)
-            {
-                if (char.IsLetter(lastName[i]))
-                {
-                    continue;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Last Name!");
-                    break;
-                }
-            }
+            string lastName = Console.ReadLine();
 
             return lastName;
         }
@@ -78,26 +40,9 @@ namespace Student_Class
         public static uint GetStudNumber(string text = "Id: ")
         {
             Console.Write(text);
-            string studNumber = Console.ReadLine();
-            uint result = 0;
+            uint number = uint.Parse(Console.ReadLine());
 
-            if (ValidationStudNumber(studNumber))
-            {
-                result = uint.Parse(studNumber);
-            }
-            else
-            {
-                Console.WriteLine("Invalid Number!");
-            }
-
-            return result;
-        }
-
-        public static bool ValidationStudNumber(string input)
-        {
-            uint number = 0;
-
-            return uint.TryParse(input, out number);
+            return number;
         }
 
         public static DateTime GetEnterDate(string text = "Date of entering: ")
